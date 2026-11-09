@@ -40,7 +40,7 @@ def load_orders() -> pd.DataFrame:
     return orders
 
 
-def build_scenarios(orders: pd.DataFrame) -> list[dict[str, str]]:
+def build_scenarios(orders: pd.DataFrame, already_refunded: set[str]) -> list[dict[str, str]]:
     """Create four reproducible test scenarios selected from the clean order data."""
     completed = orders[(orders["status"] == "completed") & orders["order_amount"].notna()].copy()
     late = completed[completed["delivery_minutes"] > 45].sort_values("order_amount")
@@ -49,9 +49,13 @@ def build_scenarios(orders: pd.DataFrame) -> list[dict[str, str]]:
     if late.empty or cancelled.empty or on_time.empty:
         raise ValueError("Cannot construct refund scenarios from the available clean order data.")
 
-    low_late = late[late["order_amount"] <= (AUTO_REFUND_LIMIT_INR * 2)]
-    low_late_order = low_late.iloc[0] if not low_late.empty else late.iloc[0]
-    high_late = late[late["order_amount"] > (AUTO_REFUND_LIMIT_INR * 2)]
+    # Prefer a qualifying order that has not already received a local refund on an earlier run.
+    available_late = late[~late["order_id"].astype(str).isin(already_refunded)]
+    if available_late.empty:
+        available_late = late
+    low_late = available_late[available_late["order_amount"] <= (AUTO_REFUND_LIMIT_INR * 2)]
+    low_late_order = low_late.iloc[0] if not low_late.empty else available_late.iloc[0]
+    high_late = late[(late["order_amount"] > (AUTO_REFUND_LIMIT_INR * 2)) & (late["order_id"] != low_late_order["order_id"])]
     high_late_order = high_late.iloc[-1] if not high_late.empty else late.iloc[-1]
 
     scenarios = [
@@ -243,11 +247,12 @@ def main() -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     STATE_DIR.mkdir(parents=True, exist_ok=True)
     orders = load_orders()
-    scenarios = build_scenarios(orders)
+    ledger = load_ledger()
+    already_refunded = {str(entry["order_id"]) for entry in ledger if entry.get("status") == "created"}
+    scenarios = build_scenarios(orders, already_refunded)
     write_scenarios(scenarios)
     AUDIT_PATH.write_text("", encoding="utf-8")
 
-    ledger = load_ledger()
     results = [execute_scenario(scenario, orders, ledger) for scenario in scenarios]
     results_df = pd.DataFrame(results)
     results_df.to_csv(OUTPUT_DIR / "refund_agent_results.csv", index=False)

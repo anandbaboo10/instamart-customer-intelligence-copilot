@@ -15,7 +15,7 @@
 ## Scenario results
 | Scenario | Order | Final status | Reason | Proposed refund (INR) | Refund ID | Iterations |
 | --- | --- | --- | --- | ---: | --- | ---: |
-| late_delivery_auto_refund | ORD-107504 | refund_created | automatic_refund_created_within_policy_limit | 7.50 | R-F657ACC4EF | 3 |
+| late_delivery_auto_refund | ORD-104930 | refund_created | automatic_refund_created_within_policy_limit | 7.50 | R-81DF5224FE | 3 |
 | late_delivery_above_limit | ORD-102879 | needs_human_approval | proposed_refund_exceeds_inr_1000_auto_approval_limit | 1999.00 |  | 3 |
 | cancelled_order_refund_request | ORD-100020 | deny | only_completed_orders_are_eligible |  |  | 3 |
 | on_time_order_refund_request | ORD-108395 | deny | delivery_delay_not_greater_than_45_minutes |  |  | 3 |
