@@ -1,0 +1,73 @@
+{
+  "cutoff_date": "2025-08-01",
+  "prediction_window": "2025-08-01 to 2025-09-30",
+  "target_definition": "1 when a customer placed at least one completed order during the 60-day prediction window; otherwise 0.",
+  "class_distribution_full_data": {
+    "0": 249,
+    "1": 951
+  },
+  "class_distribution_test_data": {
+    "0": 62,
+    "1": 238
+  },
+  "accuracy": 0.67,
+  "precision": 0.8971428571428571,
+  "recall": 0.6596638655462185,
+  "f1": 0.7602905569007264,
+  "confusion_matrix_labels": [
+    0,
+    1
+  ],
+  "confusion_matrix": [
+    [
+      44,
+      18
+    ],
+    [
+      81,
+      157
+    ]
+  ],
+  "top_feature_importances": [
+    {
+      "feature": "historical_orders",
+      "importance": 0.17362134077045982
+    },
+    {
+      "feature": "historical_revenue_inr",
+      "importance": 0.1720493094885892
+    },
+    {
+      "feature": "avg_order_value_inr",
+      "importance": 0.1217290716967554
+    },
+    {
+      "feature": "orders_snacks",
+      "importance": 0.09313706317231178
+    },
+    {
+      "feature": "recency_days",
+      "importance": 0.0893492036076031
+    },
+    {
+      "feature": "orders_dairy",
+      "importance": 0.080605603563348
+    },
+    {
+      "feature": "avg_delivery_minutes",
+      "importance": 0.07817052841377661
+    },
+    {
+      "feature": "orders_grocery",
+      "importance": 0.0742134026484708
+    },
+    {
+      "feature": "avg_discount_pct",
+      "importance": 0.05751264875791447
+    },
+    {
+      "feature": "orders_electronics",
+      "importance": 0.037641976520822656
+    }
+  ]
+}
