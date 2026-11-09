@@ -1,0 +1,94 @@
+{
+  "raw_audit": {
+    "row_counts": {
+      "customers": 1200,
+      "products": 40,
+      "orders": 13084,
+      "tickets": 164
+    },
+    "null_counts": {
+      "customers": {
+        "customer_id": 0,
+        "city": 0,
+        "signup_date": 0,
+        "age": 61,
+        "gender": 30
+      },
+      "products": {
+        "product_id": 0,
+        "product_name": 0,
+        "category": 0,
+        "price_inr": 0
+      },
+      "orders": {
+        "order_id": 0,
+        "customer_id": 0,
+        "product_id": 0,
+        "quantity": 0,
+        "order_ts": 0,
+        "status": 0,
+        "discount_pct": 0,
+        "order_amount": 53,
+        "delivery_minutes": 2541
+      },
+      "tickets": {
+        "ticket_id": 0,
+        "customer_id": 0,
+        "order_id": 8,
+        "text": 4,
+        "true_category": 0
+      }
+    },
+    "duplicate_rows": {
+      "customers": 0,
+      "products": 0,
+      "orders": 119,
+      "tickets": 0
+    },
+    "key_quality": {
+      "customers_duplicate_customer_ids": 0,
+      "products_duplicate_product_ids": 0,
+      "orders_duplicate_order_ids": 775,
+      "tickets_duplicate_ticket_ids": 0
+    },
+    "invalid_values": {
+      "customer_age_outside_13_to_100": 6,
+      "order_amount_unparseable": 67,
+      "order_amount_not_positive": 0,
+      "delivery_minutes_negative": 106,
+      "completed_orders_with_delivery_outside_8_to_75": 106
+    },
+    "referential_integrity_raw": {
+      "orders_customer_ids_not_in_customers": 0,
+      "orders_product_ids_not_in_products": 0,
+      "tickets_customer_ids_not_in_customers": 0,
+      "tickets_nonblank_order_ids_not_in_orders": 0
+    }
+  },
+  "cleaning_actions": {
+    "exact_duplicate_rows_removed": 119,
+    "earlier_order_versions_removed": 656
+  },
+  "validation": {
+    "row_counts": {
+      "customers": 1200,
+      "products": 40,
+      "orders": 12309,
+      "tickets": 164
+    },
+    "duplicate_primary_keys": {
+      "customers": 0,
+      "products": 0,
+      "orders": 0,
+      "tickets": 0
+    },
+    "invalid_customer_ages": 0,
+    "invalid_nonnull_delivery_minutes": 0,
+    "invalid_nonpositive_order_amounts": 0,
+    "orders_customer_ids_not_in_customers": 0,
+    "orders_product_ids_not_in_products": 0,
+    "tickets_customer_ids_not_in_customers": 0,
+    "tickets_nonblank_order_ids_not_in_orders": 0,
+    "passed": true
+  }
+}
