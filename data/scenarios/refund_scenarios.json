@@ -1,0 +1,22 @@
+[
+  {
+    "scenario_id": "late_delivery_auto_refund",
+    "order_id": "ORD-107504",
+    "customer_request": "My completed order arrived very late. Please process the applicable refund."
+  },
+  {
+    "scenario_id": "late_delivery_above_limit",
+    "order_id": "ORD-102879",
+    "customer_request": "My completed order arrived late. I want the policy refund."
+  },
+  {
+    "scenario_id": "cancelled_order_refund_request",
+    "order_id": "ORD-100020",
+    "customer_request": "Please refund my cancelled order."
+  },
+  {
+    "scenario_id": "on_time_order_refund_request",
+    "order_id": "ORD-108395",
+    "customer_request": "I would like a refund for this completed order."
+  }
+]

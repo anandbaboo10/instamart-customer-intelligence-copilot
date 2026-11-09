@@ -1,0 +1,5 @@
+scenario_id,order_id,customer_request,final_status,final_reason,refund_id,proposed_refund_inr,iterations
+late_delivery_auto_refund,ORD-107504,My completed order arrived very late. Please process the applicable refund.,refund_created,automatic_refund_created_within_policy_limit,R-F657ACC4EF,7.5,3
+late_delivery_above_limit,ORD-102879,My completed order arrived late. I want the policy refund.,needs_human_approval,proposed_refund_exceeds_inr_1000_auto_approval_limit,,1999.0,3
+cancelled_order_refund_request,ORD-100020,Please refund my cancelled order.,deny,only_completed_orders_are_eligible,,,3
+on_time_order_refund_request,ORD-108395,I would like a refund for this completed order.,deny,delivery_delay_not_greater_than_45_minutes,,,3

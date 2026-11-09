@@ -1,0 +1,9 @@
+[
+  {
+    "refund_id": "R-F657ACC4EF",
+    "order_id": "ORD-107504",
+    "amount_inr": 7.5,
+    "created_at_utc": "2026-11-09T09:55:52.005271+00:00",
+    "status": "created"
+  }
+]
