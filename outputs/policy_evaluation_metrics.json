@@ -1,0 +1,7 @@
+{
+  "test_cases": 11,
+  "source_retrieval_accuracy": 1.0,
+  "grounded_answer_rate": 1.0,
+  "unsupported_answers": 0,
+  "top_k": 3
+}

@@ -1,0 +1,1 @@
+Privacy policy: agents must mask email addresses and phone numbers in customer-facing records. Agents must never disclose full payment instrument numbers, passwords, OTPs, or authentication secrets. Only the minimum customer information needed to resolve the request may be used.

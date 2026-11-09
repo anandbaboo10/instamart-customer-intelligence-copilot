@@ -1,0 +1,12 @@
+question,expected_source,retrieved_sources,top_retrieval_score,answer,source_match,answer_supported_by_retrieved_context
+Which orders are eligible for a refund?,refund_policy.txt,refund_policy.txt; refund_policy.txt; delivery_sla.txt,0.7774,Cancelled orders are never eligible for a refund.,True,True
+What refund is available when delivery takes more than 45 minutes?,refund_policy.txt,refund_policy.txt; delivery_sla.txt; delivery_sla.txt,0.3736,"For delivery delays greater than 45 minutes, customers may receive a 50% refund.",True,True
+What is the maximum automatic refund amount?,refund_policy.txt,refund_policy.txt; refund_policy.txt; refund_policy.txt,0.2043,Automatic refunds are capped at INR 1000; any higher amount requires human approval.,True,True
+Can a cancelled order receive a refund?,refund_policy.txt,refund_policy.txt; refund_policy.txt; delivery_sla.txt,0.4213,Cancelled orders are never eligible for a refund.,True,True
+What delivery time does the delivery SLA target?,delivery_sla.txt,delivery_sla.txt; delivery_sla.txt; refund_policy.txt,0.4905,Delivery service-level agreement: the target delivery time is 20 to 35 minutes.,True,True
+When is a delivery considered delayed?,delivery_sla.txt,delivery_sla.txt; delivery_sla.txt; refund_policy.txt,0.6102,An order is considered delayed when delivery exceeds 45 minutes.,True,True
+What customer information must support agents mask?,privacy.txt,privacy.txt; privacy.txt; escalation.txt,0.3281,Privacy policy: agents must mask email addresses and phone numbers in customer-facing records.,True,True
+Can an agent repeat a customer's full card number in a reply?,privacy.txt,privacy.txt; privacy.txt,0.0977,Privacy policy: agents must mask email addresses and phone numbers in customer-facing records.,True,True
+Which refund cases require escalation to a human lead?,escalation.txt,escalation.txt; refund_policy.txt; refund_policy.txt,0.5801,Escalation policy: refund requests above INR 1000 require approval from a human lead.,True,True
+What should happen when a customer reports a fraud or account takeover claim?,escalation.txt,escalation.txt; privacy.txt; privacy.txt,0.2941,"Fraud, account takeover, legal threat, and data privacy incident claims must be escalated immediately.",True,True
+How can an employee change a parking pass?,none,none,0.0,I could not find that information in the policy documents.,True,True

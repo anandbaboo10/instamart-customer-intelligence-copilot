@@ -1,0 +1,1 @@
+Refund eligibility policy: only completed orders are eligible for a refund. For delivery delays greater than 45 minutes, customers may receive a 50% refund. Automatic refunds are capped at INR 1000; any higher amount requires human approval. Cancelled orders are never eligible for a refund.

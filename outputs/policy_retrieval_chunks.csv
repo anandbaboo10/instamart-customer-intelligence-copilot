@@ -1,0 +1,14 @@
+source_file,chunk_id,chunk_text
+delivery_sla.txt,delivery_sla_1,Delivery service-level agreement: the target delivery time is 20 to 35 minutes.
+delivery_sla.txt,delivery_sla_2,An order is considered delayed when delivery exceeds 45 minutes.
+delivery_sla.txt,delivery_sla_3,Agents may apologize for delays but must not promise compensation beyond the refund policy.
+escalation.txt,escalation_1,Escalation policy: refund requests above INR 1000 require approval from a human lead.
+escalation.txt,escalation_2,"Fraud, account takeover, legal threat, and data privacy incident claims must be escalated immediately."
+escalation.txt,escalation_3,Support agents should document the reason for escalation and avoid making unapproved commitments.
+privacy.txt,privacy_1,Privacy policy: agents must mask email addresses and phone numbers in customer-facing records.
+privacy.txt,privacy_2,"Agents must never disclose full payment instrument numbers, passwords, OTPs, or authentication secrets."
+privacy.txt,privacy_3,Only the minimum customer information needed to resolve the request may be used.
+refund_policy.txt,refund_policy_1,Refund eligibility policy: only completed orders are eligible for a refund.
+refund_policy.txt,refund_policy_2,"For delivery delays greater than 45 minutes, customers may receive a 50% refund."
+refund_policy.txt,refund_policy_3,Automatic refunds are capped at INR 1000; any higher amount requires human approval.
+refund_policy.txt,refund_policy_4,Cancelled orders are never eligible for a refund.

@@ -1,0 +1,1 @@
+Escalation policy: refund requests above INR 1000 require approval from a human lead. Fraud, account takeover, legal threat, and data privacy incident claims must be escalated immediately. Support agents should document the reason for escalation and avoid making unapproved commitments.
